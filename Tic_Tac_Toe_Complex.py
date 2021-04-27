@@ -37,14 +37,14 @@ def win_row(lst: list):
         string_row = ''
         for item in row:
             string_row += item
-            if 'XXXXX' in string_row:
-                print("\nPlayer 'X' row won!.")
-                quit()
-            elif 'OOOOO' in string_row:
-                print("\nPlayer 'O' row won!")
-                quit()
-            else:
-                continue
+        if 'X|X|X|X|X|' in string_row:
+            print("\nPlayer 'X' row won!.")
+            quit()
+        elif 'O|O|O|O|O|' in string_row:
+            print("\nPlayer 'O' row won!")
+            quit()
+        else:
+            continue
 
 
 def win_column(lst: list):
@@ -52,14 +52,14 @@ def win_column(lst: list):
         string_column = ''
         for j in range(1, len(lst)):
             string_column += lst[j][i]
-            if 'XXXXX' in string_column:
-                print("\nPlayer 'X' column won!.")
-                quit()
-            elif 'OOOOO' in string_column:
-                print("\nPlayer 'O' column won!")
-                quit()
-            else:
-                continue
+        if 'X|X|X|X|X|' in string_column:
+            print("\nPlayer 'X' column won!.")
+            quit()
+        elif 'O|O|O|O|O|' in string_column:
+            print("\nPlayer 'O' column won!")
+            quit()
+        else:
+            continue
 
 
 def win_diagonal(row: int, column: int, lst: list):
@@ -82,12 +82,12 @@ def win_diagonal(row: int, column: int, lst: list):
     string_reduce_add = string_reduce1 + string_add1[1:]
     string_add_reduce = string_reduce2 + string_add2[1:]
 
-    if 'XXXXX' in string_reduce_add \
-        or 'XXXXX' in string_add_reduce:
+    if 'X|X|X|X|X|' in string_reduce_add \
+        or 'X|X|X|X|X|' in string_add_reduce:
         print("\nPlayer 'X' diagonal won!")
         quit()
-    elif 'OOOOO' in string_reduce_add \
-        or 'OOOOO' in string_add_reduce:
+    elif 'O|O|O|O|O|' in string_reduce_add \
+        or 'O|O|O|O|O|' in string_add_reduce:
         print("\nPlayer 'O' diagonal won!")
         quit()
 
